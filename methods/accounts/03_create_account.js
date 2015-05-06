@@ -11,9 +11,7 @@
 var client = require('../../client.js');
 
 var sampleData = {
-  "account": {
-    "name": "Savings Wallet"
-  }
+  name: 'Savings Wallet'
 };
 
 client.createAccount(sampleData, function(err, response) {
