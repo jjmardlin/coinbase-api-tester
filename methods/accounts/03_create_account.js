@@ -10,11 +10,11 @@
 
 var client = require('../../client.js');
 
-var sampleData = {
+var args = {
   name: 'Savings Wallet'
 };
 
-client.createAccount(sampleData, function(err, response) {
+client.createAccount(args, function(err, response) {
   if (err) {
     console.log(err.message);
   } else {
