@@ -1,0 +1,45 @@
+/**
+ * MOdify current user
+ *
+ * Docs:
+ *   https://developers.coinbase.com/api#modify-current-user
+ * Lib:
+ *   User.prototype.modify
+ *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/User.js
+ */
+
+var client = require('../../client.js');
+var User = require('coinbase').model.User;
+var async  = require('async');
+
+
+async.waterfall([
+  function(callback){
+    // Fetch current user to get a user ID
+    client.getCurrentUser(function(err, user) {
+      if (err) {
+        console.log(err.message);
+      } else {
+        callback(null, user.id);
+      }
+    });
+  }, function(userId, callback){
+    
+    var myUser = new User(client, {"id" : userId});
+    // see API Docs linked above for options 
+    var args = {
+      // "name" : "JJM",
+      "native_currency": "GBP",
+      // "time zone": ""
+    };
+    
+    myUser.modify(args, function(err, user) {
+      if (err) {
+        console.log(err.message);
+      } else {
+        console.log(user);
+      }
+    });
+  }
+]);
+
