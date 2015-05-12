@@ -12,6 +12,9 @@ var client = require('../../client.js');
 var User = require('coinbase').model.User;
 var async  = require('async');
 
+var args = {
+  native_currency: 'GBP',
+};
 
 async.waterfall([
   function(callback){
@@ -26,12 +29,6 @@ async.waterfall([
   }, function(userId, callback){
     
     var myUser = new User(client, {'id' : userId});
-    // see API Docs linked above for options 
-    var args = {
-      // name : '',
-      native_currency: 'GBP',
-      // time zone: ''
-    };
     
     myUser.modify(args, function(err, user) {
       if (err) {
