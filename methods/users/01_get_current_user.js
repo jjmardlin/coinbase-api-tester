@@ -1,5 +1,5 @@
 /**
- * Get Current User accounts
+ * Get current user's accounts
  *
  * Docs:
  *   https://developers.coinbase.com/api#get-current-user
@@ -12,7 +12,7 @@ var client = require('../../client.js');
 
 client.getCurrentUser(function(err, accounts) {
   if (err) {
-    console.log(err.message);
+    console.log(err);
   } else {
     console.log(accounts);
   }
