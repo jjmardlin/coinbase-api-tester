@@ -1,10 +1,10 @@
 /**
- * Modify an account
+ * Create a new bitcoin address for an account
  *
  * Docs:
- *   https://developers.coinbase.com/api#modify-an-account
+ *   https://developers.coinbase.com/api#create-a-new-bitcoin-address-for-an-account
  * Lib:
- *   Account.prototype.modify
+ *   Account.prototype.createAddress
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
@@ -14,7 +14,8 @@ var client  = require('../../client.js');
 
 
 var args = {
- name: 'Satoshi Wallet'
+ callback_url: 'http://www.example.com/callback',
+ label: 'Dalmation donations'
 };
 
 async.waterfall([
@@ -22,7 +23,7 @@ async.waterfall([
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err);
+        console.log(err.message);
       } else {
         callback(null, accounts[0]);
       }
@@ -33,11 +34,11 @@ async.waterfall([
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
 
-    myAccount.modify(args, function(err, modifiedAcct) {
+    myAccount.createAddress(args, function(err, addressObj) {
       if (err) {
-        console.log(err);
+        console.log(err.message);
       } else {
-        console.log(modifiedAcct);
+        console.log(addressObj);
       }
     });
   }
