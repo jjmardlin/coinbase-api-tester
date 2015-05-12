@@ -1,5 +1,5 @@
 /**
- * MOdify current user
+ * Modify current user
  *
  * Docs:
  *   https://developers.coinbase.com/api#modify-current-user
@@ -18,24 +18,24 @@ async.waterfall([
     // Fetch current user to get a user ID
     client.getCurrentUser(function(err, user) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         callback(null, user.id);
       }
     });
   }, function(userId, callback){
     
-    var myUser = new User(client, {"id" : userId});
+    var myUser = new User(client, {'id' : userId});
     // see API Docs linked above for options 
     var args = {
-      // "name" : "JJM",
-      "native_currency": "GBP",
-      // "time zone": ""
+      // name : '',
+      native_currency: 'GBP',
+      // time zone: ''
     };
     
     myUser.modify(args, function(err, user) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(user);
       }
