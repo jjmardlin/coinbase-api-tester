@@ -1,5 +1,5 @@
 /**
- * Get account balance
+ * Get account's balance
  *
  * Docs:
  *   https://developers.coinbase.com/api#get-account39s-balance
