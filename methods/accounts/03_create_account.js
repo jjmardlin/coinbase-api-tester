@@ -16,7 +16,7 @@ var args = {
 
 client.createAccount(args, function(err, response) {
   if (err) {
-    console.log(err.message);
+    console.log(err);
   } else {
     console.log(response);
   }

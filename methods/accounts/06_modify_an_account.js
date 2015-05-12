@@ -22,7 +22,7 @@ async.waterfall([
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         callback(null, accounts[0]);
       }
@@ -35,7 +35,7 @@ async.waterfall([
 
     myAccount.modify(args, function(err, modifiedAcct) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(modifiedAcct);
       }

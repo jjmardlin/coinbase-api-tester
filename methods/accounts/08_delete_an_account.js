@@ -20,7 +20,7 @@ async.waterfall([
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         // set this to a non-primary account
         callback(null, accounts[2]);
@@ -35,7 +35,7 @@ async.waterfall([
 
     myAccount.delete(function(err, result) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(result);
       }

@@ -18,7 +18,7 @@ async.waterfall([
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         callback(null, accounts[0]);
       }
@@ -31,7 +31,7 @@ async.waterfall([
 
     myAccount.getBalance(function(err, balance) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(balance);
       }
