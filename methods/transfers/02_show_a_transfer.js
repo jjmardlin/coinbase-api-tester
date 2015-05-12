@@ -39,7 +39,7 @@ async.waterfall([
     }, function( myAccount, transferId, callback){
       
       // Optionally, you can manually specify a transfer ID here if needed
-      var transferId = '5551fa3d2ce112dfd800006f';
+      // var transferId = '';
 
       myAccount.getTransfer( transferId, function(err, transfers){
         if (err){
