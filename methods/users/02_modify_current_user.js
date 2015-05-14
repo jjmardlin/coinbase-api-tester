@@ -27,15 +27,9 @@ async.waterfall([
       }
     });
   }, function(userId, callback){
-<<<<<<< HEAD
-    
-    var myUser = new User(client, {'id' : userId});
-    
-=======
 
     var myUser = new User(client, {'id' : userId});
 
->>>>>>> upstream/master
     myUser.modify(args, function(err, user) {
       if (err) {
         console.log(err);
