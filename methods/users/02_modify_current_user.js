@@ -13,7 +13,7 @@ var User = require('coinbase').model.User;
 var async  = require('async');
 
 var args = {
-  native_currency: 'GBP',
+  native_currency: 'GBP'
 };
 
 async.waterfall([
@@ -27,9 +27,9 @@ async.waterfall([
       }
     });
   }, function(userId, callback){
-    
+
     var myUser = new User(client, {'id' : userId});
-    
+
     myUser.modify(args, function(err, user) {
       if (err) {
         console.log(err);
