@@ -27,9 +27,9 @@ async.waterfall([
       }
     });
   }, function(userId, callback){
-    
+
     var myUser = new User(client, {'id' : userId});
-    
+
     myUser.modify(args, function(err, user) {
       if (err) {
         console.log(err);
