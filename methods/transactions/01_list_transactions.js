@@ -7,7 +7,7 @@
  *   Client.prototype.getTransactions
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
- 
+
 var async   = require('async');
 var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
@@ -21,7 +21,7 @@ async.waterfall([
         console.log(err);
       } else {
         // console.log(accounts);
-        callback(null,accounts[0]);
+        callback(null, accounts[0]);
       }
     });
   }, function(sampleAccount, callback) {
@@ -39,4 +39,3 @@ async.waterfall([
     });
   }
 ]);
- 
