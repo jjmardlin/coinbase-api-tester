@@ -18,7 +18,7 @@ async.waterfall([
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         callback(null, accounts[1]);
       }
@@ -31,7 +31,7 @@ async.waterfall([
 
     myAccount.setPrimary(function(err, result) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(result);
       }

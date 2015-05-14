@@ -16,7 +16,7 @@ async.waterfall([
     // Fetch accounts to get an account ID
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         callback(null, accounts[0].id);
       }
@@ -28,7 +28,7 @@ async.waterfall([
 
     client.getAccount(accountId, function(err, account) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
         console.log(account);
       }

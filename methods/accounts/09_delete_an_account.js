@@ -1,10 +1,12 @@
 /**
- * Get account's balance
+ * Delete an account
+ *
+ * Only non-primary accounts with zero balance can be deleted.
  *
  * Docs:
- *   https://developers.coinbase.com/api#get-account39s-balance
+ *   https://developers.coinbase.com/api#delete-an-account
  * Lib:
- *   Account.prototype.getBalance
+ *   Account.prototype.delete
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
@@ -20,20 +22,22 @@ async.waterfall([
       if (err) {
         console.log(err);
       } else {
-        callback(null, accounts[0]);
+        // set this to a non-primary account
+        callback(null, accounts[2]);
       }
     });
   }, function(sampleAccount, callback) {
 
     var myAccount = new Account(client, sampleAccount);
-    // Alternatively, you can manually specify an account ID if needed
+
+    // To manually specify an account ID
     // var myAccount = new Account(client, {'id': 'A1234'});
 
-    myAccount.getBalance(function(err, balance) {
+    myAccount.delete(function(err, result) {
       if (err) {
         console.log(err);
       } else {
-        console.log(balance);
+        console.log(result);
       }
     });
   }
