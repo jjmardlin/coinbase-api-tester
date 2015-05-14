@@ -7,7 +7,7 @@
  *   Client.prototype.getTransactions
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
- 
+
 var async   = require('async');
 var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
@@ -25,12 +25,12 @@ async.waterfall([
       }
     });
   }, function(sampleAccount, callback) {
-    
+
     var myAccount = new Account(client, sampleAccount);
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
-    
-    //Get a list of transactions
+
+    // Get a list of transactions
     myAccount.getTransactions(1, 25, function(err, txns) {
       if (err) {
         console.log(err);
@@ -39,11 +39,10 @@ async.waterfall([
       }
     });
   }, function(myAccount, sampleTransaction, callback) {
-    
+
     var sampleTransactionId = sampleTransaction.id;
-    
     // Alternatively, you can manually specify a transaction ID if needed
-    //var sampleTransactionId =  'A1234';
+    // var sampleTransactionId =  'A1234';
 
     myAccount.getTransaction( sampleTransactionId,  function(err, txn) {
       if (err) {
@@ -54,4 +53,4 @@ async.waterfall([
     });
   }
 ]);
- 
+
