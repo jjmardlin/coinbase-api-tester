@@ -1,12 +1,10 @@
 /**
- * Delete an account
- *
- * Only non-primary accounts with zero balance can be deleted.
+ * Modify an account
  *
  * Docs:
- *   https://developers.coinbase.com/api#delete-an-account
+ *   https://developers.coinbase.com/api#modify-an-account
  * Lib:
- *   Account.prototype.delete
+ *   Account.prototype.modify
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
@@ -15,29 +13,31 @@ var Account = require('coinbase').model.Account;
 var client  = require('../../client.js');
 
 
+var args = {
+ name: 'Satoshi Wallet'
+};
+
 async.waterfall([
   function(callback) {
     // Fetch an account
     client.getAccounts(function(err, accounts) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
-        // set this to a non-primary account
-        callback(null, accounts[2]);
+        callback(null, accounts[0]);
       }
     });
   }, function(sampleAccount, callback) {
 
     var myAccount = new Account(client, sampleAccount);
-
-    // To manually specify an account ID
+    // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
 
-    myAccount.delete(function(err, result) {
+    myAccount.modify(args, function(err, modifiedAcct) {
       if (err) {
-        console.log(err.message);
+        console.log(err);
       } else {
-        console.log(result);
+        console.log(modifiedAcct);
       }
     });
   }
