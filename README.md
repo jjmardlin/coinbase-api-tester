@@ -13,6 +13,8 @@ data needed, making it fast and easy to try the API endpoints.
 destructive actions such as deleting an account or sending funds away
 from an account._**
 
+https://sandbox.coinbase.com
+
 ## Set Up
 
 1. Create a Coinbase Sandbox account at https://sandbox.coinbase.com
@@ -34,3 +36,15 @@ to call. The response will be logged to the console. For example:
 
     cd methods
     node accounts/01_list_accounts.js
+
+## License & Disclaimer
+
+This code is released under the MIT License. It may be subtly broken or buggy. Please take the following message to heart:
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
