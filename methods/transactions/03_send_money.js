@@ -8,8 +8,9 @@
  * https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
-var async = require('async'); var Account =
-require('coinbase').model.Account; var client = require('../../client.js');
+var async = require('async');
+var Account = require('coinbase').model.Account;
+var client = require('../../client.js');
 
 var args = {
 // See docs for options
