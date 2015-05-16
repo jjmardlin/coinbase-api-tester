@@ -36,7 +36,6 @@ async.waterfall([
     // Alternatively, you can manually specify an account ID if needed
     // var myAccount = new Account(client, {'id': 'A1234'});
 
-    //Get a list of transactions
     myAccount.sendMoney( args, function(err, txn) {
       if (err) {
         console.log(err);
