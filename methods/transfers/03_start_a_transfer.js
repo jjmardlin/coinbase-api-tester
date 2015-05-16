@@ -13,9 +13,6 @@ var Account = require('coinbase').model.Account;
 var Transfer = require('coinbase').model.Transfer;
 var async  = require('async');
 
-//work in progress. To complete; will need to initiate a buy or sell with
-//'commit = false' in order to complete with order with /transfers/:id:/commit
-
 async.waterfall([
   function(callback){
   // Fetch an account ID
