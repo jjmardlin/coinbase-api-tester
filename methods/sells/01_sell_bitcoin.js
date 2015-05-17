@@ -1,10 +1,10 @@
 /**
- * Buy bitcoin
+ * Sell bitcoin
  *
  * Docs:
  *   https://developers.coinbase.com/api#start-a-transfer-that-is-in-the-created-state
  * Lib:
- *   Accounts.prototype.buy
+ *   Accounts.prototype.sell
  *   https://github.com/coinbase/coinbase-node/blob/master/lib/model/Account.js
  */
 
